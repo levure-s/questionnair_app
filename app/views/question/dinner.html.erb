@@ -1,0 +1,135 @@
+<div class="body">
+  <%= form_tag("/question/dinner") do %>
+    <p>夕食メニュー</p>
+    <select id = "dinner" class="dinner" name="dinner">
+      <option value=""></option>
+      <option value="1">カトレア</option>
+      <option value="2">プラム</option>
+      <option value="3">コスモス</option>
+      <option value="4">特別メニュー</option>
+      <option value="5">和食（湯郷グランドホテル）</option>
+      <option value="6">夕食なし</option>
+    </select>
+
+    <p>
+      <input type="submit"  value="次へ">
+    </p>
+  <% end %>
+
+<div class="menu">
+  <div class="menu1">
+    <a id = "menu1">
+    <img src="/sec1b_tit.png" class="logo">
+
+    <ul>
+      <li>前菜</li>
+      <li>お魚料理</li>
+      <li>お口直し</li>
+      <li>お肉料理</li>
+      <li>デザート</li>
+    </ul>
+    <img src="/sec1b_1.jpg" class="photo">
+    </a>
+  </div>
+</div>
+
+<div class="menu">
+  <div class="menu2">
+    <a id = "menu2">
+    <img src="/sec1a_tit.png" class="logo">
+    <ul>
+      <li>　</li>
+      <li>お魚料理</li>
+      <li>お口直し</li>
+      <li>お肉料理</li>
+      <li>　</li>
+    </ul>
+    <img src="/sec1a_1.jpg" class="photo">
+    </a>
+  </div>
+</div>
+
+<div class="menu">
+  <div class="menu3">
+    <a id = "menu3">
+    <h3>コスモス</h3>
+    <ul>
+      <li>　</li>
+      <li>　</li>
+      <li>　</li>
+      <li>　</li>
+      <li>お肉料理</li>
+      <li>　</li>
+      <li>　</li>
+    </ul>
+    <img src="/0002_600.jpg" class="photo">
+    </a>
+  </div>
+</div>
+
+<div class="menu">
+  <div class="menu4">
+    <a id = "menu4">
+    <h3>特別メニュー</h3>
+    <ul>
+      <li>　</li>
+      <li>　</li>
+      <li>　</li>
+      <li>ゴールデンウィーク、</li>
+      <li>お盆、お正月限定の</li>
+      <li>特別メニュー</li>
+      <li>　</li>
+    </ul>
+    <img src="/9a9foN.jpg" class="photo">
+    </a>
+  </div>
+</div>
+
+<div class="menu">
+  <div class="menu5">
+    <a id = "menu5">
+    <h3>和食</h3>
+    <ul>
+      <li>　</li>
+      <li>　</li>
+      <li>　</li>
+      <li>本館グランドホテルでの</li>
+      <li>懐石料理</li>
+      <li>　</li>
+      <li>　</li>
+    </ul>
+    <img src="/0001_600.jpg" class="photo">
+    </a>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $("#menu1").click( function(){
+    $("#dinner").val("1");
+    $(window).scrollTop(0);
+    });
+
+    $("#menu2").click( function(){
+    $("#dinner").val("2");
+    $(window).scrollTop(0);
+    });
+
+    $("#menu3").click( function(){
+    $("#dinner").val("3");
+    $(window).scrollTop(0);
+    });
+
+    $("#menu4").click( function(){
+    $("#dinner").val("4");
+    $(window).scrollTop(0);
+    });
+
+    $("#menu5").click( function(){
+    $("#dinner").val("5");
+    $(window).scrollTop(0);
+    });
+  });
+  </script>
+
+</div>

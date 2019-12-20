@@ -1,0 +1,82 @@
+<div class="body">
+  <div class="question">
+    <p>当ホテルの以下の項目について、ご満足いただけましたでしょうか？</p>
+
+  </div>
+
+
+  <%= form_tag("/question/question4_staff") do %>
+  <p> 従業員について</p>
+
+  <div class="over">
+
+
+  <p>1.従業員の態度、話し方、マナー</p>
+  <select class="staff" name="question4_staff_1">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>2.服装や身だしなみ</p>
+  <select class="staff" name="question4_staff_2">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>3.お風呂や食事の説明のわかりやすさ</p>
+  <select class="staff" name="question4_staff_3">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>4.お客様へのご質問の対応、お答えの仕方</p>
+  <select class="staff" name="question4_staff_4">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>5.お客様のご用件への対応の迅速さ</p>
+  <select class="staff" name="question4_staff_5">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>6.きめ細やかな心配り</p>
+  <select class="staff" name="question4_staff_6">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  </div>
+
+  <p>
+    <input type="submit"  value="次へ">
+  </p>
+
+  <% end %>
+
+</div>

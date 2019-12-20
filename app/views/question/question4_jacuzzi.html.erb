@@ -1,0 +1,49 @@
+<div class="body">
+  <div class="question">
+    <p>当ホテルの以下の項目について、ご満足いただけましたでしょうか？</p>
+
+    <%= link_to("利用していない方はこちら","/question/question4_aromatherapy",:style=>"color:blue;font-size:20px;")%>
+
+  </div>
+
+
+  <%= form_tag("/question/question4_jacuzzi") do %>
+
+  <p>4階野外ジャグジーの管理状況や雰囲気について</p>
+  <p>1.雰囲気</p>
+  <select class="jacuzzi" name="question4_jacuzzi_1">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>2.清掃・管理状況</p>
+  <select class="jacuzzi" name="question4_jacuzzi_2">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>3.お湯加減</p>
+  <select class="jacuzzi" name="question4_jacuzzi_3">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>
+    <input type="submit"  value="次へ">
+  </p>
+
+  <% end %>
+
+</div>

@@ -1,0 +1,90 @@
+
+
+<div class="body">
+  <%= form_tag("/question/use") do %>
+  <p>ご来館回数</p>
+
+  今回が<select class="use" name="use">
+    <option value=""></option>
+    <option value="1">はじめて</option>
+    <option value="2">2~3回目</option>
+    <option value="3">4~5回目</option>
+    <option value="4">6~10回目</option>
+    <option value="5">11回以上</option>
+  </select>
+
+  <p>当ホテルをどのようにしてお知りになりましたか？2つまでお選びください。</p>
+
+  <select class="source-1" name="source_1">
+    <option value=""></option>
+    <option value="1">知人などの紹介</option>
+    <option value="2">雑誌</option>
+    <option value="3">テレビ・ラジオ</option>
+    <option value="4">新聞</option>
+    <option value="5">インターネット</option>
+    <option value="6">観光案内所</option>
+    <option value="7">その他</option>
+  </select>
+
+  <select class="source-2" name="source_2">
+    <option value=""></option>
+    <option value="1">知人などの紹介</option>
+    <option value="2">雑誌</option>
+    <option value="3">テレビ・ラジオ</option>
+    <option value="4">新聞</option>
+    <option value="5">インターネット</option>
+    <option value="6">観光案内所</option>
+    <option value="7">その他</option>
+  </select>
+
+
+
+  <p class = "search">インターネットを選んだ方は、検索方法を教えてください</p>
+
+  <select class="search" name="search">
+    <option value=""></option>
+    <option value="1">「ポピースプリングス　リゾート＆スパ」と直接入力</option>
+    <option value="2">「湯郷温泉」と直接入力</option>
+    <option value="3">「じゃらん net」等の予約サイトから</option>
+    <option value="4">その他検索キーワードから</option>
+    <option value="5">その他</option>
+  </select>
+
+
+  <p>
+    <input type="submit"  value="次へ">
+  </p>
+  <% end %>
+
+  <script type="text/javascript">
+    $(function() {
+
+      //セレクトボックスが切り替わったら発動
+        $('.source-1').change(function() {
+
+          //選択したvalue値を変数に格納
+            var val = $(this).val();
+
+            if (val == 5){
+              $('.search').addClass("select5-1");
+            }else {
+                $('.search').removeClass("select5-1");
+            }
+        });
+
+        $('.source-2').change(function() {
+
+          //選択したvalue値を変数に格納
+              var val = $(this).val();
+
+              if (val == 5){
+                $('.search').addClass("select5-2");
+              }else {
+                $('.search').removeClass("select5-2");
+              }
+
+        });
+      });
+    </script>
+
+</div>

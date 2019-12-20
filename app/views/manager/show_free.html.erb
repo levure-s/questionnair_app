@@ -1,0 +1,48 @@
+<div class="body">
+
+  <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+  <% end %>
+
+
+  <% @register.each do |register| %>
+
+
+      <% if register.answer.free%>
+        <div class="answer">
+          <div class="info">
+
+            <span>
+              <%= link_to(register.stayed,"/manager/answer/#{register.id}")  %>
+            </span>
+
+            <span>
+            <% if register.answer.age %>
+            <%= register.answer.age %>歳
+            <% end %>
+            </span>
+
+            <span>
+            <% if register.answer.sex == 1 %>
+            男性
+            <% elsif register.answer.sex == 2 %>
+            女性
+            <% end %>
+            </span>
+
+          </div>
+
+
+        <div class="text">
+          <%= link_to(register.answer.free,"/manager/answer/#{register.id}") %>
+        </div>
+
+
+      </div>
+      <% end %>
+
+  <% end %>
+
+</div>

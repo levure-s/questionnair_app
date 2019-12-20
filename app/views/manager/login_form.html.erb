@@ -1,0 +1,17 @@
+<div class="form-body">
+       <% if @error_message %>
+         <div class="form-error">
+           <%= @error_message %>
+         </div>
+       <% end %>
+
+       <%= form_tag("/manager/login") do %>
+         <p>ユーザー名</p>
+         <input name="name" value="<%= @name %>">
+         <p>パスワード</p>
+         <input type="password" name="password" value="<%= @password %>">
+         <p>
+           <input type="submit" value="ログイン">
+         </p>
+       <% end %>
+ </div>

@@ -1,0 +1,914 @@
+<div class="body">
+
+  <div class="answer">
+    利用日：<%= @register.stayed %>
+
+  </div>
+
+  <div class="answer">
+    部屋番号：
+    <% if @register.room_number == 204 %>
+    コネクティングルーム　202,203号室
+    <% elsif @register.room_number == 213 %>
+    コネクティングルーム　209,210号室
+    <% elsif @register.room_number == 214 %>
+    コネクティングルーム　215,216号室
+    <% elsif @register.room_number == 304 %>
+    コネクティングルーム　302,303号室
+    <% elsif @register.room_number == 313 %>
+    コネクティングルーム　309,310号室
+    <% elsif @register.room_number == 314 %>
+    コネクティングルーム　315,316号室
+    <% elsif @register.room_number == 404 %>
+    コネクティングルーム　402,403号室
+    <% elsif @register.room_number == 504 %>
+    コネクティングルーム　501,502号室
+    <% else %>
+    <%= @register.room_number%>号室
+    <% end %>
+
+  </div>
+
+
+
+  <div class="answer">
+    <% if @answer.sex == 1 %>
+      性別：男性
+    <% elsif @answer.sex == 2 %>
+      性別：女性
+    <% end %>
+
+  </div>
+
+  <div class="answer">
+    <% if @answer.age %>
+    年齢：<%= @answer.age %>歳
+    <% end %>
+  </div>
+
+  <div class="answer">
+    <% if @answer.dinner  == 1 %>
+    夕食メニュー：カトレア
+    <% elsif @answer.dinner == 2 %>
+    夕食メニュー：プラム
+    <% elsif @answer.dinner == 3 %>
+    夕食メニュー：コスモス
+    <% elsif @answer.dinner == 4 %>
+    夕食メニュー：特別ディナー
+    <% elsif @answer.dinner == 5 %>
+    夕食メニュー：和食
+    <% end %>
+
+  </div>
+
+  <div class="answer">
+    <% if @answer.address %>
+    住所：<%= @answer.address %>
+    <% end %>
+  </div>
+
+  <div class="answer">
+    <% if @answer.escort_count %>
+    人数：<%= @answer.escort_count %>人
+    <% end %>
+
+    <% if @answer.escort == 1 %>
+    （続柄：配偶者）
+    <% elsif @answer.escort == 2 %>
+    （続柄：配偶者と家族・親戚）
+    <% elsif @answer.escort == 3 %>
+    （続柄：配偶者を除く家族・親戚）
+    <% elsif @answer.escort == 4 %>
+    （続柄：友人）
+    <% elsif @answer.escort == 5 %>
+    （続柄：仕事関係者）
+    <% elsif @answer.escort == 6 %>
+    （続柄：恋人）
+    <% elsif @answer.escort == 7 %>
+    （続柄：その他）
+    <% end %>
+  </div>
+
+  <div class="answer">
+    <% if @answer.use  == 1 %>
+    来館回数：今回がはじめて
+    <% elsif @answer.use == 2 %>
+    来館回数：今回が2～3回目
+    <% elsif @answer.use == 3 %>
+    来館回数：今回が4～5回目
+    <% elsif @answer.use == 4 %>
+    来館回数：今回が6～10回目
+    <% elsif @answer.use == 5 %>
+    来館回数：今回が11回以上
+    <% end %>
+
+  </div>
+
+  <div class="answer">
+    <% if @answer.source_1 ||  @answer.source_2 %>
+    <span>情報源：</span>
+    <% end %>
+
+    <li>
+    <% if @answer.source_1  == 1 %>
+    知人などの紹介
+    <% elsif @answer.source_1 == 2 %>
+    雑誌
+    <% elsif @answer.source_1 == 3 %>
+    テレビ・ラジオ
+    <% elsif @answer.source_1 == 4 %>
+    新聞
+    <% elsif @answer.source_1 == 5 %>
+    インターネット
+      <% if @answer.search  == 1 %>
+      (検索方法：「ポピースプリングス　リゾート＆スパ」と直接入力)
+      <% elsif @answer.search == 2 %>
+      (検索方法：「湯郷温泉」と直接入力)
+      <% elsif @answer.search == 3 %>
+      (検索方法：「じゃらん net」等の予約サイトから)
+      <% elsif @answer.search == 4 %>
+      (検索方法：その他の検索キーワードから)
+      <% elsif @answer.search == 5 %>
+      (検索方法：その他)
+      <% end %>
+    <% elsif @answer.source_1 == 6 %>
+    観光案内所
+    <% elsif @answer.source_1 == 7 %>
+    その他
+    <% end %>
+    </li>
+
+    <li>
+    <% if @answer.source_2  == 1 %>
+    知人などの紹介
+    <% elsif @answer.source_2 == 2 %>
+    雑誌
+    <% elsif @answer.source_2 == 3 %>
+    テレビ・ラジオ
+    <% elsif @answer.source_2 == 4 %>
+    新聞
+    <% elsif @answer.source_2 == 5 %>
+    インターネット
+      <% if @answer.search  == 1 %>
+      (検索方法：「ポピースプリングス　リゾート＆スパ」と直接入力)
+      <% elsif @answer.search == 2 %>
+      (検索方法：「湯郷温泉」と直接入力)
+      <% elsif @answer.search == 3 %>
+      (検索方法：「じゃらん net」等の予約サイトから)
+      <% elsif @answer.search == 4 %>
+      (検索方法：その他の検索キーワードから)
+      <% elsif @answer.search == 5 %>
+      (検索方法：その他)
+      <% end %>
+    <% elsif @answer.source_2 == 6 %>
+    観光案内所
+    <% elsif @answer.source_2 == 7 %>
+    その他
+    <% end %>
+    </li>
+
+  </div>
+
+  <div class="answer">
+    <% if @answer.question1 == 1 %>
+    Q1　目的：湯治
+    <% elsif @answer.question1 == 2 %>
+    Q1　目的：家族旅行
+    <% elsif @answer.question1 == 3 %>
+    Q1　目的：休暇
+    <% elsif @answer.question1 == 4 %>
+    Q1　目的：観光
+    <% elsif @answer.question1 == 5 %>
+    Q1　目的：イベント
+    <% elsif @answer.question1 == 6 %>
+    Q1　目的：その他
+    <% end %>
+
+  </div>
+
+  <div class="answer">
+    <% if @answer.question2_1 ||  @answer.question2_2 || @answer.question2_3 %>
+    <span>Q2　選んだ理由</span>
+    <% end %>
+
+    <li>
+    <% if @answer.question2_1  == 1 %>
+    ホテルの雰囲気が良い
+    <% elsif @answer.question2_1 == 2 %>
+    お風呂の雰囲気が良い
+    <% elsif @answer.question2_1 == 3 %>
+    料理が美味しい
+    <% elsif @answer.question2_1 == 4 %>
+    従業員のサービスが良い
+    <% elsif @answer.question2_1 == 5 %>
+    温泉の線質が良い
+    <% elsif @answer.question2_1 == 6 %>
+    旅行代理店の勧め
+    <% elsif @answer.question2_1 == 7 %>
+    以前利用したことがあり気に入った
+    <% elsif @answer.question2_1 == 8 %>
+    料金が適正
+    <% elsif @answer.question2_1 == 9 %>
+    のんびりとくつろげる
+    <% elsif @answer.question2_1 == 10 %>
+    知人の勧め
+    <% elsif @answer.question2_1 == 11 %>
+    その他
+    <% end %>
+    </li>
+
+    <li>
+    <% if @answer.question2_1  == 1 %>
+    ホテルの雰囲気が良い
+    <% elsif @answer.question2_2 == 2 %>
+    お風呂の雰囲気が良い
+    <% elsif @answer.question2_2 == 3 %>
+    料理が美味しい
+    <% elsif @answer.question2_2 == 4 %>
+    従業員のサービスが良い
+    <% elsif @answer.question2_2 == 5 %>
+    温泉の線質が良い
+    <% elsif @answer.question2_2 == 6 %>
+    旅行代理店の勧め
+    <% elsif @answer.question2_2 == 7 %>
+    以前利用したことがあり気に入った
+    <% elsif @answer.question2_2 == 8 %>
+    料金が適正
+    <% elsif @answer.question2_2 == 9 %>
+    のんびりとくつろげる
+    <% elsif @answer.question2_2 == 10 %>
+    知人の勧め
+    <% elsif @answer.question2_2 == 11 %>
+    その他
+    <% end %>
+    </li>
+
+    <li>
+    <% if @answer.question2_3  == 1 %>
+    ホテルの雰囲気が良い
+    <% elsif @answer.question2_3 == 2 %>
+    お風呂の雰囲気が良い
+    <% elsif @answer.question2_3 == 3 %>
+    料理が美味しい
+    <% elsif @answer.question2_3 == 4 %>
+    従業員のサービスが良い
+    <% elsif @answer.question2_3 == 5 %>
+    温泉の線質が良い
+    <% elsif @answer.question2_3 == 6 %>
+    旅行代理店の勧め
+    <% elsif @answer.question2_3 == 7 %>
+    以前利用したことがあり気に入った
+    <% elsif @answer.question2_3 == 8 %>
+    料金が適正
+    <% elsif @answer.question2_3 == 9 %>
+    のんびりとくつろげる
+    <% elsif @answer.question2_3 == 10 %>
+    知人の勧め
+    <% elsif @answer.question2_3 == 11 %>
+    その他
+    <% end %>
+    </li>
+
+  </div>
+
+  <div class="answer">
+    <% if @answer.question3  == 1 %>
+    Q3　内容に比較して　→　非常に安い
+    <% elsif @answer.question3 == 2 %>
+    Q3　内容に比較して　→　やや安い
+    <% elsif @answer.question3 == 3 %>
+    Q3　内容に比較して　→　適正
+    <% elsif @answer.question3 == 4 %>
+    Q3　内容に比較して　→　やや高い
+    <% elsif @answer.question3 == 5 %>
+    Q3　内容に比較して　→　非常に高い
+    <% end %>
+  </div>
+
+
+  <div class="answer">
+    <% if @answer.question4_staff_1 || @answer.question4_staff_2 || @answer.question4_staff_3 || @answer.question4_staff_4 || @answer.question4_staff_5 || @answer.question4_staff_6 || @answer.question4_spring_1 || @answer.question4_spring_2 || @answer.question4_spring_3 || @answer.question4_jacuzzi_1 || @answer.question4_jacuzzi_2 || @answer.question4_jacuzzi_3 || @answer.question4_aromatherapy_1 || @answer.question4_aromatherapy_2 || @answer.question4_aromatherapy_3 || @answer.question4_dinner_1 || @answer.question4_dinner_2 || @answer.question4_dinner_3 || @answer.question4_dinner_4 || @answer.question4_dinner_5 || @answer.question4_dinner_6 || @answer.question4_breakfast_1 || @answer.question4_breakfast_2 || @answer.question4_breakfast_3 || @answer.question4_breakfast_4 || @answer.question4_hotel_1 || @answer.question4_hotel_2 || @answer.question4_hotel_3 || @answer.question4_guest_room_1 || @answer.question4_guest_room_2 || @answer.question4_guest_room_3 || @answer.question4_guest_room_4 %>
+    <span>Q4</span>
+    <% end %>
+
+
+    <ul>
+      <% if @answer.question4_staff_1 || @answer.question4_staff_2 || @answer.question4_staff_3 || @answer.question4_staff_4 || @answer.question4_staff_5 || @answer.question4_staff_6 %>
+      <p>　</p>
+      <span>従業員について</span>
+      <% end %>
+
+      <li>
+        <% if @answer.question4_staff_1 == 5 %>
+        従業員の態度、話し方、マナー：とても満足
+        <% elsif @answer.question4_staff_1 == 4 %>
+        従業員の態度、話し方、マナー：一応満足
+        <% elsif @answer.question4_staff_1 == 3 %>
+        従業員の態度、話し方、マナー：どちらとも言えない
+        <% elsif @answer.question4_staff_1 == 2 %>
+        従業員の態度、話し方、マナー：ちょっと不満
+        <% elsif @answer.question4_staff_1 == 1 %>
+        従業員の態度、話し方、マナー：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_staff_2 == 5 %>
+        服装や身だしなみ：とても満足
+        <% elsif @answer.question4_staff_2 == 4 %>
+        服装や身だしなみ：一応満足
+        <% elsif @answer.question4_staff_2 == 3 %>
+        服装や身だしなみ：どちらとも言えない
+        <% elsif @answer.question4_staff_2 == 2 %>
+        服装や身だしなみ：ちょっと不満
+        <% elsif @answer.question4_staff_2 == 1 %>
+        服装や身だしなみ：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_staff_3  == 5 %>
+        お風呂や食事の説明の分かりやすさ：とても満足
+        <% elsif @answer.question4_staff_3 == 4 %>
+        お風呂や食事の説明の分かりやすさ：一応満足
+        <% elsif @answer.question4_staff_3 == 3 %>
+        お風呂や食事の説明の分かりやすさ：どちらとも言えない
+        <% elsif @answer.question4_staff_3 == 2 %>
+        お風呂や食事の説明の分かりやすさ：ちょっと不満
+        <% elsif @answer.question4_staff_3 == 1 %>
+        お風呂や食事の説明の分かりやすさ：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_staff_4  == 5 %>
+        お客様へのご質問の対応、お答えの仕方：とても満足
+        <% elsif @answer.question4_staff_4 == 4 %>
+        お客様へのご質問の対応、お答えの仕方：一応満足
+        <% elsif @answer.question4_staff_4 == 3 %>
+        お客様へのご質問の対応、お答えの仕方：どちらとも言えない
+        <% elsif @answer.question4_staff_4 == 2 %>
+        お客様へのご質問の対応、お答えの仕方：ちょっと不満
+        <% elsif @answer.question4_staff_4 == 1 %>
+        お客様へのご質問の対応、お答えの仕方：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_staff_5  == 5 %>
+        お客様のご用件への対応の迅速さ：とても満足
+        <% elsif @answer.question4_staff_5 == 4 %>
+        お客様のご用件への対応の迅速さ：一応満足
+        <% elsif @answer.question4_staff_5 == 3 %>
+        お客様のご用件への対応の迅速さ：どちらとも言えない
+        <% elsif @answer.question4_staff_5 == 2 %>
+        お客様のご用件への対応の迅速さ：ちょっと不満
+        <% elsif @answer.question4_staff_5 == 1 %>
+        お客様のご用件への対応の迅速さ：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_staff_6  == 5 %>
+        きめ細やかな心配り：とても満足
+        <% elsif @answer.question4_staff_6 == 4 %>
+        きめ細やかな心配り：一応満足
+        <% elsif @answer.question4_staff_6 == 3 %>
+        きめ細やかな心配り：どちらとも言えない
+        <% elsif @answer.question4_staff_6 == 2 %>
+        きめ細やかな心配り：ちょっと不満
+        <% elsif @answer.question4_staff_6 == 1 %>
+        きめ細やかな心配り：とても不満
+        <% end %>
+      </li>
+
+    </ul>
+
+
+    <ul>
+      <% if @answer.question4_spring_1 || @answer.question4_spring_2 || @answer.question4_spring_3 %>
+      <p>　</p>
+      <span>大浴場の管理状況や雰囲気について</span>
+      <% end %>
+
+      <li>
+        <% if @answer.question4_spring_1  == 5 %>
+        雰囲気：とても満足
+        <% elsif @answer.question4_spring_1 == 4 %>
+        雰囲気：一応満足
+        <% elsif @answer.question4_spring_1 == 3 %>
+        雰囲気：どちらとも言えない
+        <% elsif @answer.question4_spring_1 == 2 %>
+        雰囲気：ちょっと不満
+        <% elsif @answer.question4_spring_1 == 1 %>
+        雰囲気：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_spring_2  == 5 %>
+        清掃・管理状況：とても満足
+        <% elsif @answer.question4_spring_2 == 4 %>
+        清掃・管理状況：一応満足
+        <% elsif @answer.question4_spring_2 == 3 %>
+        清掃・管理状況：どちらとも言えない
+        <% elsif @answer.question4_spring_2 == 2 %>
+        清掃・管理状況：ちょっと不満
+        <% elsif @answer.question4_spring_2 == 1 %>
+        清掃・管理状況：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_spring_3  == 5 %>
+        お湯加減：とても満足
+        <% elsif @answer.question4_spring_3 == 4 %>
+        お湯加減：一応満足
+        <% elsif @answer.question4_spring_3 == 3 %>
+        お湯加減：どちらとも言えない
+        <% elsif @answer.question4_spring_3 == 2 %>
+        お湯加減：ちょっと不満
+        <% elsif @answer.question4_spring_3 == 1 %>
+        お湯加減：とても不満
+        <% end %>
+      </li>
+
+    </ul>
+
+
+    <ul>
+      <% if @answer.question4_jacuzzi_1 || @answer.question4_jacuzzi_2 || @answer.question4_jacuzzi_3 %>
+      <p>　</p>
+      <span>4階野外ジャグジーの管理状況や雰囲気について</span>
+      <% end %>
+
+      <li>
+        <% if @answer.question4_jacuzzi_1  == 5 %>
+        雰囲気：とても満足
+        <% elsif @answer.question4_jacuzzi_1 == 4 %>
+        雰囲気：一応満足
+        <% elsif @answer.question4_jacuzzi_1 == 3 %>
+        雰囲気：どちらとも言えない
+        <% elsif @answer.question4_jacuzzi_1 == 2 %>
+        雰囲気：ちょっと不満
+        <% elsif @answer.question4_jacuzzi_1 == 1 %>
+        雰囲気：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_jacuzzi_2  == 5 %>
+        清掃・管理状況：とても満足
+        <% elsif @answer.question4_jacuzzi_2 == 4 %>
+        清掃・管理状況：一応満足
+        <% elsif @answer.question4_jacuzzi_2 == 3 %>
+        清掃・管理状況：どちらとも言えない
+        <% elsif @answer.question4_jacuzzi_2 == 2 %>
+        清掃・管理状況：ちょっと不満
+        <% elsif @answer.question4_jacuzzi_2 == 1 %>
+        清掃・管理状況：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_jacuzzi_3  == 5 %>
+        お湯加減：とても満足
+        <% elsif @answer.question4_jacuzzi_3 == 4 %>
+        お湯加減：一応満足
+        <% elsif @answer.question4_jacuzzi_3 == 3 %>
+        お湯加減：どちらとも言えない
+        <% elsif @answer.question4_jacuzzi_3 == 2 %>
+        お湯加減：ちょっと不満
+        <% elsif @answer.question4_jacuzzi_3 == 1 %>
+        お湯加減：とても不満
+        <% end %>
+      </li>
+
+    </ul>
+
+
+    <ul>
+      <% if @answer.question4_aromatherapy_1 || @answer.question4_aromatherapy_2 || @answer.question4_aromatherapy_3 %>
+      <p>　</p>
+      <span>アロマテラピー・エステについて</span>
+      <% end %>
+
+      <li>
+        <% if @answer.question4_aromatherapy_1  == 5 %>
+        効果・効能について：とても満足
+        <% elsif @answer.question4_aromatherapy_1 == 4 %>
+        効果・効能について：一応満足
+        <% elsif @answer.question4_aromatherapy_1 == 3 %>
+        効果・効能について：どちらとも言えない
+        <% elsif @answer.question4_aromatherapy_1 == 2 %>
+        効果・効能について：ちょっと不満
+        <% elsif @answer.question4_aromatherapy_1 == 1 %>
+        効果・効能について：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_aromatherapy_2  == 5 %>
+        家具、調度品、備品の雰囲気：とても満足
+        <% elsif @answer.question4_aromatherapy_2 == 4 %>
+        家具、調度品、備品の雰囲気：一応満足
+        <% elsif @answer.question4_aromatherapy_2 == 3 %>
+        家具、調度品、備品の雰囲気：どちらとも言えない
+        <% elsif @answer.question4_aromatherapy_2 == 2 %>
+        家具、調度品、備品の雰囲気：ちょっと不満
+        <% elsif @answer.question4_aromatherapy_2 == 1 %>
+        家具、調度品、備品の雰囲気：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_aromatherapy_3  == 5 %>
+        清掃・管理状況：とても満足
+        <% elsif @answer.question4_aromatherapy_3 == 4 %>
+        清掃・管理状況：一応満足
+        <% elsif @answer.question4_aromatherapy_3 == 3 %>
+        清掃・管理状況：どちらとも言えない
+        <% elsif @answer.question4_aromatherapy_3 == 2 %>
+        清掃・管理状況：ちょっと不満
+        <% elsif @answer.question4_aromatherapy_3 == 1 %>
+        清掃・管理状況：とても不満
+        <% end %>
+      </li>
+
+    </ul>
+
+
+    <ul>
+      <% if @answer.question4_dinner_1 || @answer.question4_dinner_2 || @answer.question4_dinner_3 || @answer.question4_dinner_4 || @answer.question4_dinner_5 || @answer.question4_dinner_6 %>
+      <p>　</p>
+      <span>夕食について</span>
+      <% end %>
+
+      <li>
+        <% if @answer.question4_dinner_1  == 5 %>
+        味付け：とても満足
+        <% elsif @answer.question4_dinner_1 == 4 %>
+        味付け：一応満足
+        <% elsif @answer.question4_dinner_1 == 3 %>
+        味付け：どちらとも言えない
+        <% elsif @answer.question4_dinner_1 == 2 %>
+        味付け：ちょっと不満
+        <% elsif @answer.question4_dinner_1 == 1 %>
+        味付け：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_dinner_2  == 5 %>
+        メニュー構成：とても満足
+        <% elsif @answer.question4_dinner_2 == 4 %>
+        メニュー構成：一応満足
+        <% elsif @answer.question4_dinner_2 == 3 %>
+        メニュー構成：どちらとも言えない
+        <% elsif @answer.question4_dinner_2 == 2 %>
+        メニュー構成：ちょっと不満
+        <% elsif @answer.question4_dinner_2 == 1 %>
+        メニュー構成：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_dinner_3  == 5 %>
+        量：とても満足
+        <% elsif @answer.question4_dinner_3 == 4 %>
+        量：一応満足
+        <% elsif @answer.question4_dinner_3 == 3 %>
+        量：どちらとも言えない
+        <% elsif @answer.question4_dinner_3 == 2 %>
+        量：ちょっと不満
+        <% elsif @answer.question4_dinner_3 == 1 %>
+        量：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_dinner_4  == 5 %>
+        器の選び方、センス：とても満足
+        <% elsif @answer.question4_dinner_4 == 4 %>
+        器の選び方、センス：一応満足
+        <% elsif @answer.question4_dinner_4 == 3 %>
+        器の選び方、センス：どちらとも言えない
+        <% elsif @answer.question4_dinner_4 == 2 %>
+        器の選び方、センス：ちょっと不満
+        <% elsif @answer.question4_dinner_4 == 1 %>
+        器の選び方、センス：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_dinner_5  == 5 %>
+        盛りつけの美しさ、楽しさ：とても満足
+        <% elsif @answer.question4_dinner_5 == 4 %>
+        盛りつけの美しさ、楽しさ：一応満足
+        <% elsif @answer.question4_dinner_5 == 3 %>
+        盛りつけの美しさ、楽しさ：どちらとも言えない
+        <% elsif @answer.question4_dinner_5 == 2 %>
+        盛りつけの美しさ、楽しさ：ちょっと不満
+        <% elsif @answer.question4_dinner_5 == 1 %>
+        盛りつけの美しさ、楽しさ：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_dinner_6  == 5 %>
+        お料理をお出しするタイミング：とても満足
+        <% elsif @answer.question4_dinner_6 == 4 %>
+        お料理をお出しするタイミング：一応満足
+        <% elsif @answer.question4_dinner_6 == 3 %>
+        お料理をお出しするタイミング：どちらとも言えない
+        <% elsif @answer.question4_dinner_6 == 2 %>
+        お料理をお出しするタイミング：ちょっと不満
+        <% elsif @answer.question4_dinner_6 == 1 %>
+        お料理をお出しするタイミング：とても不満
+        <% end %>
+      </li>
+
+    </ul>
+
+
+    <ul>
+      <% if @answer.question4_breakfast_1 || @answer.question4_breakfast_2 || @answer.question4_breakfast_3 || @answer.question4_breakfast_4 %>
+      <p>　</p>
+      <span>朝食について</span>
+      <% end %>
+
+      <li>
+        <% if @answer.question4_breakfast_1  == 5 %>
+        味付け：とても満足
+        <% elsif @answer.question4_breakfast_1 == 4 %>
+        味付け：一応満足
+        <% elsif @answer.question4_breakfast_1 == 3 %>
+        味付け：どちらとも言えない
+        <% elsif @answer.question4_breakfast_1 == 2 %>
+        味付け：ちょっと不満
+        <% elsif @answer.question4_breakfast_1 == 1 %>
+        味付け：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_breakfast_2  == 5 %>
+        メニュー構成：とても満足
+        <% elsif @answer.question4_breakfast_2 == 4 %>
+        メニュー構成：一応満足
+        <% elsif @answer.question4_breakfast_2 == 3 %>
+        メニュー構成：どちらとも言えない
+        <% elsif @answer.question4_breakfast_2 == 2 %>
+        メニュー構成：ちょっと不満
+        <% elsif @answer.question4_breakfast_2 == 1 %>
+        メニュー構成：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_breakfast_3  == 5 %>
+        器の選び方、センス：とても満足
+        <% elsif @answer.question4_breakfast_3 == 4 %>
+        器の選び方、センス：一応満足
+        <% elsif @answer.question4_breakfast_3 == 3 %>
+        器の選び方、センス：どちらとも言えない
+        <% elsif @answer.question4_breakfast_3 == 2 %>
+        器の選び方、センス：ちょっと不満
+        <% elsif @answer.question4_breakfast_3 == 1 %>
+        器の選び方、センス：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_breakfast_4  == 5 %>
+        盛りつけの美しさ、楽しさ：とても満足
+        <% elsif @answer.question4_breakfast_4 == 4 %>
+        盛りつけの美しさ、楽しさ：一応満足
+        <% elsif @answer.question4_breakfast_4 == 3 %>
+        盛りつけの美しさ、楽しさ：どちらとも言えない
+        <% elsif @answer.question4_breakfast_4 == 2 %>
+        盛りつけの美しさ、楽しさ：ちょっと不満
+        <% elsif @answer.question4_breakfast_4 == 1 %>
+        盛りつけの美しさ、楽しさ：とても不満
+        <% end %>
+      </li>
+
+    </ul>
+
+
+    <ul>
+      <% if @answer.question4_hotel_1 || @answer.question4_hotel_2 || @answer.question4_hotel_3 %>
+      <p>　</p>
+      <span>館内の管理状況や雰囲気について</span>
+      <% end %>
+
+      <li>
+        <% if @answer.question4_hotel_1  == 5 %>
+        生け花、装飾などの演出：とても満足
+        <% elsif @answer.question4_hotel_1 == 4 %>
+        生け花、装飾などの演出：一応満足
+        <% elsif @answer.question4_hotel_1 == 3 %>
+        生け花、装飾などの演出：どちらとも言えない
+        <% elsif @answer.question4_hotel_1 == 2 %>
+        生け花、装飾などの演出：ちょっと不満
+        <% elsif @answer.question4_hotel_1 == 1 %>
+        生け花、装飾などの演出：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_hotel_2  == 5 %>
+        家具、調度品、備品の雰囲気：とても満足
+        <% elsif @answer.question4_hotel_2 == 4 %>
+        家具、調度品、備品の雰囲気：一応満足
+        <% elsif @answer.question4_hotel_2 == 3 %>
+        家具、調度品、備品の雰囲気：どちらとも言えない
+        <% elsif @answer.question4_hotel_2 == 2 %>
+        家具、調度品、備品の雰囲気：ちょっと不満
+        <% elsif @answer.question4_hotel_2 == 1 %>
+        家具、調度品、備品の雰囲気：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_hotel_3  == 5 %>
+        清掃・管理状況：とても満足
+        <% elsif @answer.question4_hotel_3 == 4 %>
+        清掃・管理状況：一応満足
+        <% elsif @answer.question4_hotel_3 == 3 %>
+        清掃・管理状況：どちらとも言えない
+        <% elsif @answer.question4_hotel_3 == 2 %>
+        清掃・管理状況：ちょっと不満
+        <% elsif @answer.question4_hotel_3 == 1 %>
+        清掃・管理状況：とても不満
+        <% end %>
+      </li>
+
+    </ul>
+
+
+    <ul>
+      <% if @answer.question4_guest_room_1 || @answer.question4_guest_room_2 || @answer.question4_guest_room_3 || @answer.question4_guest_room_4 %>
+      <p>　</p>
+      <span>館内の管理状況や雰囲気について</span>
+      <% end %>
+
+      <li>
+        <% if @answer.question4_guest_room_1  == 5 %>
+        館内着のデザイン、着心地：とても満足
+        <% elsif @answer.question4_guest_room_1 == 4 %>
+        館内着のデザイン、着心地：一応満足
+        <% elsif @answer.question4_guest_room_1 == 3 %>
+        館内着のデザイン、着心地：どちらとも言えない
+        <% elsif @answer.question4_guest_room_1 == 2 %>
+        館内着のデザイン、着心地：ちょっと不満
+        <% elsif @answer.question4_guest_room_1 == 1 %>
+        館内着のデザイン、着心地：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_guest_room_2  == 5 %>
+        生け花、装飾などの演出：とても満足
+        <% elsif @answer.question4_guest_room_2 == 4 %>
+        生け花、装飾などの演出：一応満足
+        <% elsif @answer.question4_guest_room_2 == 3 %>
+        生け花、装飾などの演出：どちらとも言えない
+        <% elsif @answer.question4_guest_room_2 == 2 %>
+        生け花、装飾などの演出：ちょっと不満
+        <% elsif @answer.question4_guest_room_2 == 1 %>
+        生け花、装飾などの演出：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_guest_room_3  == 5 %>
+        家具、調度品、備品の雰囲気：とても満足
+        <% elsif @answer.question4_guest_room_3 == 4 %>
+        家具、調度品、備品の雰囲気：一応満足
+        <% elsif @answer.question4_guest_room_3 == 3 %>
+        家具、調度品、備品の雰囲気：どちらとも言えない
+        <% elsif @answer.question4_guest_room_3 == 2 %>
+        家具、調度品、備品の雰囲気：ちょっと不満
+        <% elsif @answer.question4_guest_room_3 == 1 %>
+        家具、調度品、備品の雰囲気：とても不満
+        <% end %>
+      </li>
+
+      <li>
+        <% if @answer.question4_guest_room_4  == 5 %>
+        清掃・管理状況：とても満足
+        <% elsif @answer.question4_guest_room_4 == 4 %>
+        清掃・管理状況：一応満足
+        <% elsif @answer.question4_guest_room_4 == 3 %>
+        清掃・管理状況：どちらとも言えない
+        <% elsif @answer.question4_guest_room_4 == 2 %>
+        清掃・管理状況：ちょっと不満
+        <% elsif @answer.question4_guest_room_4 == 1 %>
+        清掃・管理状況：とても不満
+        <% end %>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <div class="answer">
+    <li>
+    <% if @answer.question5  == 1 %>
+    Q5　再利用傾向：是非利用したい
+    <% elsif @answer.question5 == 2 %>
+    Q5　再利用傾向：機会があれば利用したい
+    <% elsif @answer.question5 == 3 %>
+    Q5　再利用傾向：どちらとも言えない
+    <% elsif @answer.question5 == 4 %>
+    Q5　再利用傾向：あまり利用したくない
+    <% elsif @answer.question5 == 5 %>
+    Q5　再利用傾向：絶対に利用したくない
+    <% end %>
+    </li>
+
+
+    <% if @answer.question5_reason_good_1 || @answer.question5_reason_good_2 || @answer.question5_reason_bad_1 || @answer.question5_reason_bad_2 %>
+    <span>↓理由</span>
+
+      <li>
+      <% if @answer.question5_reason_good_1  == 1 %>
+      落ち着ける、くつろげる
+      <% elsif @answer.question5_reason_good_1 == 2 %>
+      ホテル全体の雰囲気、センスがよい
+      <% elsif @answer.question5_reason_good_1 == 3 %>
+      食事が良い
+      <% elsif @answer.question5_reason_good_1 == 4 %>
+      従業員の接客、サービスが良い
+      <% elsif @answer.question5_reason_good_1 == 5 %>
+      お風呂、温泉の線質が良い
+      <% elsif @answer.question5_reason_good_1 == 6 %>
+      その他
+      <% end %>
+      </li>
+
+      <li>
+      <% if @answer.question5_reason_good_2  == 1 %>
+      落ち着ける、くつろげる
+      <% elsif @answer.question5_reason_good_2 == 2 %>
+      ホテル全体の雰囲気、センスがよい
+      <% elsif @answer.question5_reason_good_2 == 3 %>
+      食事が良い
+      <% elsif @answer.question5_reason_good_2 == 4 %>
+      従業員の接客、サービスが良い
+      <% elsif @answer.question5_reason_good_2 == 5 %>
+      お風呂、温泉の線質が良い
+      <% elsif @answer.question5_reason_good_2 == 6 %>
+      その他
+      <% end %>
+      </li>
+
+      <li>
+      <% if @answer.question5_reason_bad_1  == 1 %>
+      館内がうるさい
+      <% elsif @answer.question5_reason_bad_1 == 2 %>
+      ホテル全体の雰囲気、センスが悪い
+      <% elsif @answer.question5_reason_bad_1 == 3 %>
+      食事がまずい、食事処の雰囲気が悪い
+      <% elsif @answer.question5_reason_bad_1 == 4 %>
+      従業員の接客、サービスが悪い
+      <% elsif @answer.question5_reason_bad_1 == 5 %>
+      館内の手入れが行き届いていない
+      <% elsif @answer.question5_reason_bad_1 == 6 %>
+      その他
+      <% end %>
+      </li>
+
+      <li>
+      <% if @answer.question5_reason_bad_2  == 1 %>
+      館内がうるさい
+      <% elsif @answer.question5_reason_bad_2 == 2 %>
+      ホテル全体の雰囲気、センスが悪い
+      <% elsif @answer.question5_reason_bad_2 == 3 %>
+      食事がまずい、食事処の雰囲気が悪い
+      <% elsif @answer.question5_reason_bad_2 == 4 %>
+      従業員の接客、サービスが悪い
+      <% elsif @answer.question5_reason_bad_2 == 5 %>
+      館内の手入れが行き届いていない
+      <% elsif @answer.question5_reason_bad_2 == 6 %>
+      その他
+      <% end %>
+      </li>
+
+
+
+    <% end %>
+
+
+
+
+
+
+  </div>
+
+
+
+
+</div>

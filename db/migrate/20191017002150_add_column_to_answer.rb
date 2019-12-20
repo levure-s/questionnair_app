@@ -1,0 +1,56 @@
+class AddColumnToAnswer < ActiveRecord::Migration[6.0]
+  def change
+    add_column :answers, :age, :integer
+    add_column :answers, :adress, :string
+    add_column :answers, :dinner, :integer
+    add_column :answers, :escort_count, :integer
+    add_column :answers, :escort, :integer
+    add_column :answers, :use, :integer
+    add_column :answers, :source, :integer
+    add_column :answers, :search, :integer
+    add_column :answers, :Q1, :integer
+    add_column :answers, :Q2_1, :integer
+    add_column :answers, :Q2_2, :integer
+    add_column :answers, :Q2_3, :integer
+    add_column :answers, :Q3, :integer
+    add_column :answers, :Q4_staff_1, :integer
+    add_column :answers, :Q4_staff_2, :integer
+    add_column :answers, :Q4_staff_3, :integer
+    add_column :answers, :Q4_staff_4, :integer
+    add_column :answers, :Q4_staff_5, :integer
+    add_column :answers, :Q4_staff_6, :integer
+    add_column :answers, :Q4_spring_1, :integer
+    add_column :answers, :Q4_spring_2, :integer
+    add_column :answers, :Q4_spring_3, :integer
+    add_column :answers, :Q4_Jacuzzi_1, :integer
+    add_column :answers, :Q4_Jacuzzi_2, :integer
+    add_column :answers, :Q4_Jacuzzi_3, :integer
+    add_column :answers, :Q4_aromatherapy_1, :integer
+    add_column :answers, :Q4_aromatherapy_2, :integer
+    add_column :answers, :Q4_aromatherapy_3, :integer
+    add_column :answers, :Q4_dinner_1, :integer
+    add_column :answers, :Q4_dinner_2, :integer
+    add_column :answers, :Q4_dinner_3, :integer
+    add_column :answers, :Q4_dinner_4, :integer
+    add_column :answers, :Q4_dinner_5, :integer
+    add_column :answers, :Q4_dinner_6, :integer
+    add_column :answers, :Q4_breakfast_1, :integer
+    add_column :answers, :Q4_breakfast_2, :integer
+    add_column :answers, :Q4_breakfast_3, :integer
+    add_column :answers, :Q4_breakfast_4, :integer
+    add_column :answers, :Q4_hotel_1, :integer
+    add_column :answers, :Q4_hotel_2, :integer
+    add_column :answers, :Q4_hotel_3, :integer
+    add_column :answers, :Q4_guest_room_1, :integer
+    add_column :answers, :Q4_guest_room_2, :integer
+    add_column :answers, :Q4_guest_room_3, :integer
+    add_column :answers, :Q4_guest_room_4, :integer
+    add_column :answers, :Q5, :integer
+    add_column :answers, :Q5_reason_good_1, :integer
+    add_column :answers, :Q5_reason_good_2, :integer
+    add_column :answers, :Q5_reason_bad_1, :integer
+    add_column :answers, :Q5_reason_bad_2, :integer
+    add_column :answers, :Free, :text
+    add_column :answers, :register_id, :integer
+  end
+end

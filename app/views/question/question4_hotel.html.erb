@@ -1,0 +1,45 @@
+<div class="body">
+  <div class="question">
+    <p>当ホテルの以下の項目について、ご満足いただけましたでしょうか？</p>
+
+  </div>
+
+  <%= form_tag("/question/question4_hotel") do %>
+  <p>館内の管理状況や雰囲気について</p>
+  <p>1.生け花、装飾などの演出</p>
+  <select class="hotel" name="question4_hotel_1">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>2.家具、調度品、備品の雰囲気</p>
+  <select class="hotel" name="question4_hotel_2">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>3.清掃・管理状況</p>
+  <select class="hotel" name="question4_hotel_3">
+    <option value=""></option>
+    <option value="5">とても満足</option>
+    <option value="4">一応満足</option>
+    <option value="3">どちらとも言えない</option>
+    <option value="2">ちょっと不満</option>
+    <option value="1">とても不満</option>
+  </select>
+
+  <p>
+    <input type="submit"  value="次へ">
+  </p>
+
+  <% end %>
+
+</div>

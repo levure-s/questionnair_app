@@ -1,0 +1,19 @@
+<div class="body">
+  <% if flash[:notice] %>
+  <div class="form_error">
+    <%= flash[:notice]%>
+  </div>
+  <% end %>
+
+  <%= form_tag("/question/free") do %>
+
+  <p>当ホテルについてお気づきの点やご要望がございましたら、ご記入ください。(500文字以内)</p>
+  <textarea name="free"><%= @current_ansewr.free %></textarea>
+
+  <p>
+    <input type="submit"  value="次へ">
+  </p>
+
+  <% end %>
+
+</div>

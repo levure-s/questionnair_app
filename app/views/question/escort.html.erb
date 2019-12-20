@@ -1,0 +1,24 @@
+<div class="body">
+
+  <%= form_tag("/question/escort") do %>
+  <p>ご同伴人数（本人様も含む人数をご記入ください）</p>
+  <input type="number" name="escort_count">
+
+  <p>同伴者様との続柄</p>
+  <select class="escort" name="escort">
+    <option value=""></option>
+    <option value="1">配偶者</option>
+    <option value="2">配偶者と家族・親戚</option>
+    <option value="3">配偶者を除く家族・親戚</option>
+    <option value="4">友人</option>
+    <option value="5">仕事関係者</option>
+    <option value="6">恋人</option>
+    <option value="7">その他</option>
+  </select>
+
+  <p>
+    <input type="submit"  value="次へ">
+  </p>
+  <% end %>
+
+</div>

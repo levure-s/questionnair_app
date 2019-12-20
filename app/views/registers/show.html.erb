@@ -1,0 +1,84 @@
+<div class="registers">
+  <% if flash[:notice] %>
+  <div class="form_error">
+    <%= flash[:notice]%>
+  </div>
+  <% end %>
+
+    <%= form_tag("/registers/create") do %>
+
+    <p>ご宿泊された部屋</p>
+      <select class="room_number" name="room_number">
+        <option value="201">201号室</option>
+        <option value="202">202号室</option>
+        <option value="203">203号室</option>
+        <option value="204">コネクティングルーム202、203号室</option>
+        <option value="205">205号室</option>
+        <option value="206">206号室</option>
+        <option value="207">207号室</option>
+        <option value="208">208号室</option>
+        <option value="209">209号室</option>
+        <option value="210">210号室</option>
+        <option value="213">コネクティングルーム209、210号室</option>
+        <option value="211">211号室</option>
+        <option value="212">212号室</option>
+        <option value="215">215号室</option>
+        <option value="216">216号室</option>
+        <option value="214">コネクティングルーム215、216号室</option>
+        <option value="217">217号室</option>
+        <option value="218">218号室</option>
+        <option value="219">219号室</option>
+        <option value="220">220号室</option>
+        <option value="301">301号室</option>
+        <option value="302">302号室</option>
+        <option value="303">303号室</option>
+        <option value="304">コネクティングルーム302、303号室</option>
+        <option value="305">305号室</option>
+        <option value="306">306号室</option>
+        <option value="307">307号室</option>
+        <option value="308">308号室</option>
+        <option value="309">309号室</option>
+        <option value="310">310号室</option>
+        <option value="313">コネクティングルーム309、310号室</option>
+        <option value="311">311号室</option>
+        <option value="312">312号室</option>
+        <option value="315">315号室</option>
+        <option value="316">316号室</option>
+        <option value="314">コネクティングルーム315、316号室</option>
+        <option value="317">317号室</option>
+        <option value="318">318号室</option>
+        <option value="319">319号室</option>
+        <option value="320">320号室</option>
+        <option value="401">401号室</option>
+        <option value="402">402号室</option>
+        <option value="403">403号室</option>
+        <option value="404">コネクティングルーム402、403号室</option>
+        <option value="405">405号室</option>
+        <option value="407">407号室</option>
+        <option value="408">408号室</option>
+        <option value="409">409号室</option>
+        <option value="410">410号室</option>
+        <option value="411">411号室</option>
+        <option value="412">412号室</option>
+        <option value="415">415号室</option>
+        <option value="501">501号室</option>
+        <option value="502">502号室</option>
+        <option value="504">コネクティングルーム502、503号室</option>
+        <option value="503">503号室</option>
+        <option value="505">505号室</option>
+        <option value="506">506号室</option>
+      </select>
+
+      <div class="stayed">
+        <p>ご宿泊日（チェックインされた日）</p>
+      </div>
+      <input type="date" name="stayed" value="today">
+
+      <p>
+        <input type="submit"  value="次へ">
+      </p>
+    <% end %>
+
+
+
+</div>
