@@ -85,7 +85,7 @@
     <% elsif @answer.escort == 6 %>
     （続柄：恋人）
     <% elsif @answer.escort == 7 %>
-    （続柄：その他）
+    （続柄：<%= @answer.escort_other %>）
     <% end %>
   </div>
 
@@ -113,7 +113,7 @@
     <% if @answer.source_1  == 1 %>
     知人などの紹介
     <% elsif @answer.source_1 == 2 %>
-    雑誌
+    雑誌(雑誌名：<%= @answer.magazine %>)
     <% elsif @answer.source_1 == 3 %>
     テレビ・ラジオ
     <% elsif @answer.source_1 == 4 %>
@@ -125,16 +125,16 @@
       <% elsif @answer.search == 2 %>
       (検索方法：「湯郷温泉」と直接入力)
       <% elsif @answer.search == 3 %>
-      (検索方法：「じゃらん net」等の予約サイトから)
+      (検索方法：「<%= @answer.website %>」から検索)
       <% elsif @answer.search == 4 %>
-      (検索方法：その他の検索キーワードから)
+      (検索方法：「<%= @answer.keyword %>」と入力)
       <% elsif @answer.search == 5 %>
-      (検索方法：その他)
+      (検索方法：<%= @answer.search_other %>)
       <% end %>
     <% elsif @answer.source_1 == 6 %>
     観光案内所
     <% elsif @answer.source_1 == 7 %>
-    その他
+    <%= @answer.source_other %>
     <% end %>
     </li>
 
@@ -142,7 +142,7 @@
     <% if @answer.source_2  == 1 %>
     知人などの紹介
     <% elsif @answer.source_2 == 2 %>
-    雑誌
+    雑誌(雑誌名：<%= @answer.magazine %>)
     <% elsif @answer.source_2 == 3 %>
     テレビ・ラジオ
     <% elsif @answer.source_2 == 4 %>
@@ -154,16 +154,16 @@
       <% elsif @answer.search == 2 %>
       (検索方法：「湯郷温泉」と直接入力)
       <% elsif @answer.search == 3 %>
-      (検索方法：「じゃらん net」等の予約サイトから)
+      (検索方法：「<%= @answer.website %>」から検索)
       <% elsif @answer.search == 4 %>
-      (検索方法：その他の検索キーワードから)
+      (検索方法：「<%= @answer.keyword %>」と入力)
       <% elsif @answer.search == 5 %>
-      (検索方法：その他)
+      (検索方法：<%= @answer.search_other %>)
       <% end %>
     <% elsif @answer.source_2 == 6 %>
     観光案内所
     <% elsif @answer.source_2 == 7 %>
-    その他
+    <%= @answer.source_other %>
     <% end %>
     </li>
 
@@ -177,11 +177,11 @@
     <% elsif @answer.question1 == 3 %>
     Q1　目的：休暇
     <% elsif @answer.question1 == 4 %>
-    Q1　目的：観光
+    Q1　目的：観光（場所：<%= @answer.question1_destination %>）
     <% elsif @answer.question1 == 5 %>
-    Q1　目的：イベント
+    Q1　目的：イベント（内容：<%= @answer.question1_event %>）
     <% elsif @answer.question1 == 6 %>
-    Q1　目的：その他
+    Q1　目的：<%= @answer.question1_other %>
     <% end %>
 
   </div>
@@ -213,12 +213,12 @@
     <% elsif @answer.question2_1 == 10 %>
     知人の勧め
     <% elsif @answer.question2_1 == 11 %>
-    その他
+    <%= @answer.question2_other %>
     <% end %>
     </li>
 
     <li>
-    <% if @answer.question2_1  == 1 %>
+    <% if @answer.question2_2  == 1 %>
     ホテルの雰囲気が良い
     <% elsif @answer.question2_2 == 2 %>
     お風呂の雰囲気が良い
@@ -239,7 +239,7 @@
     <% elsif @answer.question2_2 == 10 %>
     知人の勧め
     <% elsif @answer.question2_2 == 11 %>
-    その他
+    <%= @answer.question2_other %>
     <% end %>
     </li>
 
@@ -265,7 +265,7 @@
     <% elsif @answer.question2_3 == 10 %>
     知人の勧め
     <% elsif @answer.question2_3 == 11 %>
-    その他
+    <%= @answer.question2_other %>
     <% end %>
     </li>
 
@@ -845,7 +845,7 @@
       <% elsif @answer.question5_reason_good_1 == 5 %>
       お風呂、温泉の線質が良い
       <% elsif @answer.question5_reason_good_1 == 6 %>
-      その他
+      <%= @answer.question5_reason_good_other %>
       <% end %>
       </li>
 
@@ -861,7 +861,7 @@
       <% elsif @answer.question5_reason_good_2 == 5 %>
       お風呂、温泉の線質が良い
       <% elsif @answer.question5_reason_good_2 == 6 %>
-      その他
+      <%= @answer.question5_reason_good_other %>
       <% end %>
       </li>
 
@@ -877,7 +877,7 @@
       <% elsif @answer.question5_reason_bad_1 == 5 %>
       館内の手入れが行き届いていない
       <% elsif @answer.question5_reason_bad_1 == 6 %>
-      その他
+      <%= @answer.question5_reason_bad_other %>
       <% end %>
       </li>
 
@@ -893,7 +893,7 @@
       <% elsif @answer.question5_reason_bad_2 == 5 %>
       館内の手入れが行き届いていない
       <% elsif @answer.question5_reason_bad_2 == 6 %>
-      その他
+      <%= @answer.question5_reason_bad_other %>
       <% end %>
       </li>
 

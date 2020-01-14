@@ -12,6 +12,18 @@
     <option value="6">その他</option>
   </select>
 
+  <p class="other">
+  (場所：<input name="question1_destination">)
+  </p>
+
+  <p class="other1">
+  (内容：<input name="question1_event">)
+  </p>
+
+  <p class="other2">
+  (具体的に：<input name="question1_other">)
+  </p>
+
   <p>この度、当ホテルをお選びいただいた理由は何ですか？3つまでお選びください。</p>
 
   <select class="question2_1" name="question2_1">
@@ -59,6 +71,10 @@
     <option value="11">その他</option>
   </select>
 
+  <p class="other3">
+  (具体的に：<input name="question2_other">)
+  </p>
+
 <div class="over">
   <p>当ホテルの内容と料金のバランスについてどのように思われますか？</p>
 </div>
@@ -79,5 +95,72 @@
 
 
   <% end %>
+
+<script type="text/javascript">
+  $(function() {
+
+    //セレクトボックスが切り替わったら発動
+      $('.question1').change(function() {
+
+        //選択したvalue値を変数に格納
+          var val = $(this).val();
+
+          if (val == 4){
+            $('.other').addClass("select-other");
+            $('.other1').removeClass("select-other");
+            $('.other2').removeClass("select-other");
+          }else if(val == 5){
+            $('.other1').addClass("select-other");
+            $('.other').removeClass("select-other");
+            $('.other2').removeClass("select-other");
+          }else if(val == 6){
+            $('.other2').addClass("select-other");
+            $('.other').removeClass("select-other");
+            $('.other1').removeClass("select-other");
+          }else {
+            $('.other').removeClass("select-other");
+            $('.other1').removeClass("select-other");
+            $('.other2').removeClass("select-other");
+          }
+        });
+
+        $('.question2_1').change(function() {
+
+          //選択したvalue値を変数に格納
+            var val = $(this).val();
+
+            if (val == 11){
+              $('.other3').addClass("select-other");
+            }else {
+                $('.other3').removeClass("select-other");
+            }
+        });
+
+        $('.question2_2').change(function() {
+
+          //選択したvalue値を変数に格納
+            var val = $(this).val();
+
+            if (val == 11){
+              $('.other3').addClass("select5-1");
+            }else {
+                $('.other3').removeClass("select5-1");
+            }
+        });
+
+        $('.question2_3').change(function() {
+
+          //選択したvalue値を変数に格納
+            var val = $(this).val();
+
+            if (val == 11){
+              $('.other3').addClass("select5-2");
+            }else {
+                $('.other3').removeClass("select5-2");
+            }
+        });
+    });
+  </script>
+
 
 </div>

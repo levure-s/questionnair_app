@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_131645) do
+ActiveRecord::Schema.define(version: 2020_01_14_040129) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "sex"
@@ -70,6 +70,18 @@ ActiveRecord::Schema.define(version: 2019_12_16_131645) do
     t.integer "question5_reason_bad_2"
     t.text "free"
     t.integer "register_id2"
+    t.string "escort_other"
+    t.string "magazine"
+    t.string "website"
+    t.string "keyword"
+    t.string "search_other"
+    t.string "question1_destination"
+    t.string "question1_event"
+    t.string "question1_other"
+    t.string "question2_other"
+    t.string "question5_reason_good_other"
+    t.string "question5_reason_bad_other"
+    t.string "source_other"
   end
 
   create_table "managers", force: :cascade do |t|
@@ -77,6 +89,23 @@ ActiveRecord::Schema.define(version: 2019_12_16_131645) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "password_digest"
+  end
+
+  create_table "others", force: :cascade do |t|
+    t.string "escort"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "magazine"
+    t.string "website"
+    t.string "keyword"
+    t.string "search"
+    t.string "question1_destination"
+    t.string "question1_event"
+    t.string "question1"
+    t.string "question2"
+    t.string "question5_reason_good"
+    t.string "question5_reason_bad"
+    t.integer "register_id"
   end
 
   create_table "registers", force: :cascade do |t|

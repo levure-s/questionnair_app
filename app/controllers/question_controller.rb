@@ -31,6 +31,7 @@ class QuestionController < ApplicationController
   def escort_c
     @current_ansewr.escort_count = params[:escort_count]
     @current_ansewr.escort = params[:escort]
+    @current_ansewr.escort_other = params[:escort_other]
     @current_ansewr.save
     redirect_to("/question/use")
   end
@@ -42,7 +43,12 @@ class QuestionController < ApplicationController
     @current_ansewr.use = params[:use]
     @current_ansewr.source_1 = params[:source_1]
     @current_ansewr.source_2 = params[:source_2]
+    @current_ansewr.magazine = params[:magazine]
+    @current_ansewr.source_other = params[:source_other]
     @current_ansewr.search = params[:search]
+    @current_ansewr.website = params[:website]
+    @current_ansewr.keyword = params[:keyword]
+    @current_ansewr.search_other = params[:search_other]
     @current_ansewr.save
     redirect_to("/question/question123")
   end
@@ -52,9 +58,13 @@ class QuestionController < ApplicationController
 
   def question123_c
     @current_ansewr.question1 = params[:question1]
+    @current_ansewr.question1_destination = params[:question1_destination]
+    @current_ansewr.question1_event = params[:question1_event]
+    @current_ansewr.question1_other = params[:question1_other]
     @current_ansewr.question2_1 = params[:question2_1]
     @current_ansewr.question2_2 = params[:question2_2]
     @current_ansewr.question2_3 = params[:question2_3]
+    @current_ansewr.question2_other = params[:question2_other]
     @current_ansewr.question3 = params[:question3]
     @current_ansewr.save
     redirect_to("/question/question4_staff")
@@ -181,6 +191,7 @@ class QuestionController < ApplicationController
   def question5_reason_good_c
     @current_ansewr.question5_reason_good_1 = params[:question5_reason_good_1]
     @current_ansewr.question5_reason_good_2 = params[:question5_reason_good_2]
+    @current_ansewr.question5_reason_good_other = params[:question5_reason_good_other]
     @current_ansewr.save
     redirect_to("/question/free")
   end
@@ -191,6 +202,7 @@ class QuestionController < ApplicationController
   def question5_reason_bad_c
     @current_ansewr.question5_reason_bad_1 = params[:question5_reason_bad_1]
     @current_ansewr.question5_reason_bad_2 = params[:question5_reason_bad_2]
+    @current_ansewr.question5_reason_bad_other = params[:question5_reason_bad_other]
     @current_ansewr.save
     redirect_to("/question/free")
   end

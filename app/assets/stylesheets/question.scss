@@ -121,19 +121,18 @@ body {
   width:200px;
 }
 
-.search{
+.search,.other,.other1,.other2,.other3,.other4{
   display:none;
 }
 
-.select5-1{
+
+
+.select-other,.select5-1,.select5-2{
   display:block;
-  margin:0 auto;
+  margin:10px auto;
 }
 
-.select5-2{
-  display:block;
-  margin:0 auto;
-}
+
 
 @media (max-width: 670px) {
   .menu{

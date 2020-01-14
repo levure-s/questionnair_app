@@ -16,9 +16,32 @@
     <option value="7">その他</option>
   </select>
 
+  <p class="other">
+  (具体的に：<input name="escort_other">)
+  </p>
+
+
   <p>
     <input type="submit"  value="次へ">
   </p>
   <% end %>
+
+  <script type="text/javascript">
+    $(function() {
+
+      //セレクトボックスが切り替わったら発動
+        $('.escort').change(function() {
+
+          //選択したvalue値を変数に格納
+            var val = $(this).val();
+
+            if (val == 7){
+              $('.other').addClass("select-other");
+            }else {
+                $('.other').removeClass("select-other");
+            }
+        });
+      });
+    </script>
 
 </div>

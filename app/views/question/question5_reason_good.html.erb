@@ -4,7 +4,7 @@
 
   <p>その理由を2つまでお選びください。</p>
 
-  <select class="reason_good" name="question5_reason_good_1">
+  <select class="reason_good_1" name="question5_reason_good_1">
     <option value=""></option>
     <option value="1">落ち着ける、くつろげる</option>
     <option value="2">ホテル全体の雰囲気、センスが良い</option>
@@ -14,7 +14,7 @@
     <option value="6">その他</option>
   </select>
 
-  <select class="reason_good" name="question5_reason_good_2">
+  <select class="reason_good_2" name="question5_reason_good_2">
     <option value=""></option>
     <option value="1">落ち着ける、くつろげる</option>
     <option value="2">ホテル全体の雰囲気、センスが良い</option>
@@ -23,11 +23,45 @@
     <option value="5">お風呂、温室の泉質がよい</option>
     <option value="6">その他</option>
   </select>
+
+  <p class="other">
+  (具体的に：<input name="question5_reason_good_other">)
+  </p>
 
   <p>
     <input type="submit"  value="次へ">
   </p>
 
   <% end %>
+
+  <script type="text/javascript">
+    $(function() {
+
+          $('.reason_good_1').change(function() {
+
+            //選択したvalue値を変数に格納
+              var val = $(this).val();
+
+              if (val == 6){
+                $('.other').addClass("select-other");
+              }else {
+                  $('.other').removeClass("select-other");
+              }
+          });
+
+          $('.reason_good_2').change(function() {
+
+            //選択したvalue値を変数に格納
+              var val = $(this).val();
+
+              if (val == 6){
+                $('.other').addClass("select5-1");
+              }else {
+                  $('.other').removeClass("select5-1");
+              }
+          });
+
+      });
+    </script>
 
 </div>

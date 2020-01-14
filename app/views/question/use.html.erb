@@ -39,6 +39,16 @@
 
 
 
+  <p class="other1">
+  (雑誌名：<input name="magazine">)
+  </p>
+
+  <p class="other">
+  (具体的に：<input name="source_other">)
+  </p>
+
+
+
   <p class = "search">インターネットを選んだ方は、検索方法を教えてください</p>
 
   <select class="search" name="search">
@@ -49,6 +59,18 @@
     <option value="4">その他検索キーワードから</option>
     <option value="5">その他</option>
   </select>
+
+  <p class="other2">
+  (サイト名：<input name="website">)
+  </p>
+
+  <p class="other3">
+  (入力したキーワード：<input name="keyword">)
+  </p>
+
+  <p class="other4">
+  (具体的に：<input name="search_other">)
+  </p>
 
 
   <p>
@@ -67,8 +89,25 @@
 
             if (val == 5){
               $('.search').addClass("select5-1");
+              $('.other1').removeClass("select5-1");
+              $('.other').removeClass("select5-1");
+            }else if(val == 2){
+              $('.other1').addClass("select5-1");
+              $('.search').removeClass("select5-1");
+              $('.other').removeClass("select5-1");
+            }else if(val == 7){
+              $('.other').addClass("select5-1");
+              $('.search').removeClass("select5-1");
+              $('.other1').removeClass("select5-1");
             }else {
-                $('.search').removeClass("select5-1");
+              $('.search').removeClass("select5-1");
+              $('.other1').removeClass("select5-1");
+              $('.other').removeClass("select5-1");
+            }
+            if($('.search').hasClass("select5-2")){}else{
+              $('.other2').removeClass("select5-2");
+              $('.other3').removeClass("select5-2");
+              $('.other4').removeClass("select5-2");
             }
         });
 
@@ -79,11 +118,53 @@
 
               if (val == 5){
                 $('.search').addClass("select5-2");
+                $('.other1').removeClass("select5-2");
+                $('.other').removeClass("select5-2");
+              }else if(val == 2){
+                $('.other1').addClass("select5-2");
+                $('.search').removeClass("select5-2");
+                $('.other').removeClass("select5-2");
+              }else if(val == 7){
+                $('.other').addClass("select5-2");
+                $('.search').removeClass("select5-2");
+                $('.other1').removeClass("select5-2");
               }else {
                 $('.search').removeClass("select5-2");
+                $('.other1').removeClass("select5-2");
+                $('.other').removeClass("select5-2");
+                }
+
+              if($('.search').hasClass("select5-1")){}else{
+                $('.other2').removeClass("select5-2");
+                $('.other3').removeClass("select5-2");
+                $('.other4').removeClass("select5-2");
               }
 
-        });
+          });
+
+          $('.search').change(function() {
+
+            //選択したvalue値を変数に格納
+                var val = $(this).val();
+
+                if (val == 3){
+                  $('.other2').addClass("select5-2");
+                  $('.other3').removeClass("select5-2");
+                  $('.other4').removeClass("select5-2");
+                }else if(val == 4){
+                  $('.other3').addClass("select5-2");
+                  $('.other2').removeClass("select5-2");
+                  $('.other4').removeClass("select5-2");
+                }else if(val == 5){
+                  $('.other4').addClass("select5-2");
+                  $('.other2').removeClass("select5-2");
+                  $('.other3').removeClass("select5-2");
+                }else {
+                  $('.other2').removeClass("select5-2");
+                  $('.other3').removeClass("select5-2");
+                  $('.other4').removeClass("select5-2");
+                }
+            });
       });
     </script>
 
