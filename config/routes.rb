@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  post '/other/escort' => "other#escort_c"
+  get '/other/escort' => "other#escort"
+  post "/other/create" => "other#create"
+
   get "/manager/answer/:id" => "manager#answer"
   get "/manager/show_free" => "manager#show_free"
   post "/manager/login" => "manager#login"

@@ -13,7 +13,7 @@ class QuestionController < ApplicationController
     )
     @answer.save
     flash[:notice] = nil
-    redirect_to("/question/dinner")
+    redirect_to("/other/create")
   end
 
   def dinner
@@ -32,7 +32,13 @@ class QuestionController < ApplicationController
     @current_ansewr.escort_count = params[:escort_count]
     @current_ansewr.escort = params[:escort]
     @current_ansewr.save
-    redirect_to("/question/use")
+
+    if @current_ansewr.escort == 7
+      redirect_to("/other/escort")
+    else
+      redirect_to("/question/use")
+    end
+
   end
 
   def use
