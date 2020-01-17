@@ -2,7 +2,7 @@ class Answer < ApplicationRecord
 
 #  belongs_to :registers
 
-  validates :free, {length: {maximum: 500}}
+  validates :free, {length: {maximum: 200}}
   validates :escort_other, {length: {maximum: 50}}
   validates :magazine, {length: {maximum: 20}}
   validates :website, {length: {maximum: 20}}
