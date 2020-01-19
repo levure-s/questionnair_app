@@ -1,6 +1,7 @@
 class QuestionController < ApplicationController
   before_action :set_current_ansewr
 
+
   def profile
   end
 
@@ -216,7 +217,7 @@ class QuestionController < ApplicationController
     if @current_ansewr.save
       redirect_to("/last")
     else
-      flash[:notice] = "500文字以内で入力してください"
+      flash[:notice] = "200文字以内で入力してください"
       render("question/free")
     end
   end
